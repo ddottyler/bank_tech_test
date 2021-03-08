@@ -13,6 +13,8 @@ class bankTech {
 
   withdraw(amount) {
     this._balance -= amount
+    let withdrawalDetails = {date: this.date(), credit: null, debit: amount, balance: this._balance}
+    this._transactionHistory.push(withdrawalDetails)
   }
 
   date() {
