@@ -23,8 +23,9 @@ class bankAccount{
   withdraw(amount) {
     if (amount > this._MAX_WITHDRAWAL) {
       return 'Withdrawal limit reached'
-    }
-    else {
+    } else if (amount > this._accountBalance.showBalance()) {
+      return 'There is not enough money in this account for the requested withdrawal'
+    } else {
       this._accountBalance._balance -= amount
       let withdrawalDetails = {date: this._currentDate.dateToday(), credit:'', debit: amount, balance: this._accountBalance.showBalance()}
       this._transactionHistory.push(withdrawalDetails)

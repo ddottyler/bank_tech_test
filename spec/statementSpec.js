@@ -1,6 +1,9 @@
 describe('bankAccount', function(){
   
   let account;
+
+  let ONE_OVER_MAX_DEPOSIT = 5001
+  let ONE_OVER_MAX_WITHDRAWAL = 5001
   
   beforeEach(function(){
     account = new bankAccount();
@@ -40,7 +43,7 @@ describe('bankAccount', function(){
     })
 
     it('should prevent deposits of over the max limit being made', function(){
-      expect(account.deposit(5001)).toEqual('Max deposit reached')
+      expect(account.deposit(ONE_OVER_MAX_DEPOSIT)).toEqual('Max deposit reached')
 
     })
 
@@ -61,7 +64,11 @@ describe('bankAccount', function(){
     })
 
     it('should prevent withdrawal above the max withdrawal limit', function(){
-      expect(account.withdraw(5001)).toEqual('Withdrawal limit reached')
+      expect(account.withdraw(ONE_OVER_MAX_WITHDRAWAL)).toEqual('Withdrawal limit reached')
+    })
+
+    it('should prevent withdrawal if there is not enough money in balance', function(){
+      expect(account.withdraw(10)).toEqual('There is not enough money in this account for the requested withdrawal')
     })
 
   })
