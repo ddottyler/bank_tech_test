@@ -25,17 +25,23 @@ describe('bankAccount', function(){
   // Tests are below
 
   describe('deposit', function() {
+    let x = 500;  
 
     it('should deposit x amount to balance', function(){
-      account.deposit(500);
-      expect(account._accountBalance.showBalance()).toBe(500);
+      account.deposit(x);
+      expect(account._accountBalance.showBalance()).toBe(x);
     })
 
     it('should make a full record of deposit, including date, transaction type and total balance', function(){
-      account.deposit(500);
+      account.deposit(x);
       expect(account._transactionHistory[0]).toEqual(
         {date: date(), credit: 500.00, debit:'', balance: 500.00}
         )
+    })
+
+    it('should prevent deposits of over the max limit being made', function(){
+      expect(account.deposit(5001)).toEqual('Max deposit reached')
+
     })
 
   })
@@ -52,6 +58,10 @@ describe('bankAccount', function(){
       expect(account._transactionHistory[1]).toEqual(
         {date: date(), credit:'', debit: 500.00, balance: 0}
       )
+    })
+
+    it('should prevent withdrawal above the max withdrawal limit', function(){
+      expect(account.withdraw(5001)).toEqual('Withdrawal limit reached')
     })
 
   })
