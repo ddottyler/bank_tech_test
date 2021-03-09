@@ -23,7 +23,7 @@ This project has been designed to be interacted with via the JavaScript console.
 
 This project is written in JavaScript and uses Jasmine as it's testing framework. Similarly to the above, to run and check the tests within this project, type `open SpecRunner.html` into the command line when in the root of the project repo.
 
-This project uses Karma for test coverage and this can be started by typing `karma start` into the terminal when in the root of the repo.
+This project uses Karma for test coverage and this can be started by typing `karma start` into the terminal when in the root of the repo. Alternatively, and for better visibility on coverage, navigate to coverage/html and `open index.html`. This should launch a page on your default browser with a breakdown of what is being tested and what the coverage looks like. 
 
 **How to run linter** 
 
