@@ -19,6 +19,16 @@ I first identified the core classes that would be needed and the variables/metho
 
 This project has been designed to be interacted with via the JavaScript console. One way to interact with the code is therefore to type `open SpecRunner.html` into the command line when in the root of the project repo. This should open your default browser. If google, you can then hold _option_, _command_, _i_ to open the console within developer tools. This will give you full access to interact with the code. 
 
+**Dependencies used and how to install them** 
+
+For Karma 
+- `npm install karma --save-dev`
+- `npm install karma-jasmine karma-chrome-launcher jasmine-core --save-dev`
+
+For eslint 
+- `npm install eslint --save-dev`
+- `npx eslint --init`
+
 **How to run the tests** 
 
 This project is written in JavaScript and uses Jasmine as it's testing framework. Similarly to the above, to run and check the tests within this project, type `open SpecRunner.html` into the command line when in the root of the project repo.
