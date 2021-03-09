@@ -14,10 +14,14 @@ class bankAccount{
       return 'Max deposit reached'
     }
     else {
-      this._accountBalance._balance += amount
-      let depositDetails = {date: this._currentDate.dateToday(), credit: amount, debit:'', balance: this._accountBalance.showBalance()}
-      this._transactionHistory.push(depositDetails)
+      this._accountBalance.deposit(amount)
+      this.depositTransaction(amount)
     }
+  }
+
+  depositTransaction(amount){
+    let depositDetails = {date: this._currentDate.dateToday(), credit: amount, debit:'', balance: this._accountBalance.showBalance()}
+    this._transactionHistory.push(depositDetails)
   }
 
   withdraw(amount) {
@@ -26,10 +30,14 @@ class bankAccount{
     } else if (amount > this._accountBalance.showBalance()) {
       return 'There is not enough money in this account for the requested withdrawal'
     } else {
-      this._accountBalance._balance -= amount
-      let withdrawalDetails = {date: this._currentDate.dateToday(), credit:'', debit: amount, balance: this._accountBalance.showBalance()}
-      this._transactionHistory.push(withdrawalDetails)
+      this._accountBalance.withdraw(amount)
+      this.withdrawTransaction(amount)
     }
+  }
+
+  withdrawTransaction(amount){
+    let withdrawalDetails = {date: this._currentDate.dateToday(), credit:'', debit: amount, balance: this._accountBalance.showBalance()}
+    this._transactionHistory.push(withdrawalDetails)
   }
 
   showStatement() {

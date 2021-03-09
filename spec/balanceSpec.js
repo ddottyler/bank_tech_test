@@ -14,4 +14,19 @@ describe("balance", function(){
     })
   })
 
+  describe('deposit', function(){
+    it('should add to the current balance', function(){
+      balanceTest.deposit(500)
+      expect(balanceTest.showBalance()).toEqual(500)
+    })
+  })
+
+  describe('withdraw', function(){
+    it('should reduce the current balance', function(){
+      balanceTest.deposit(500)
+      balanceTest.withdraw(300)
+      expect(balanceTest.showBalance()).toEqual(200)
+    })
+  })
+
 })
