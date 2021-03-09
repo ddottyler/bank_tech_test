@@ -19,11 +19,6 @@ class bankAccount{
     }
   }
 
-  depositTransaction(amount){
-    let depositDetails = {date: this._currentDate.dateToday(), credit: amount, debit:'', balance: this._accountBalance.showBalance()}
-    this._transactionHistory.push(depositDetails)
-  }
-
   withdraw(amount) {
     if (amount > this._MAX_WITHDRAWAL) {
       return 'Withdrawal limit reached'
@@ -35,11 +30,6 @@ class bankAccount{
     }
   }
 
-  withdrawTransaction(amount){
-    let withdrawalDetails = {date: this._currentDate.dateToday(), credit:'', debit: amount, balance: this._accountBalance.showBalance()}
-    this._transactionHistory.push(withdrawalDetails)
-  }
-
   showStatement() {
     let statement;
     this._transactionHistory.reverse().forEach(transaction => 
@@ -48,6 +38,16 @@ class bankAccount{
       ' || '+ transaction.debit +
       ' || '+ transaction.balance +'\n') 
     return statement
+  }
+
+  depositTransaction(amount){
+    let depositDetails = {date: this._currentDate.dateToday(), credit: amount, debit:'', balance: this._accountBalance.showBalance()}
+    this._transactionHistory.push(depositDetails)
+  }
+
+  withdrawTransaction(amount){
+    let withdrawalDetails = {date: this._currentDate.dateToday(), credit:'', debit: amount, balance: this._accountBalance.showBalance()}
+    this._transactionHistory.push(withdrawalDetails)
   }
 
 }
