@@ -1,0 +1,26 @@
+{
+  "name": "bank_tech_test_package",
+  "version": "1.0.0",
+  "description": "### Project overview This is a practice tech test taking place on week 10 of the Makers course.  The aim is to practice OO design and TDD skills within the framework of a tech test that an employer might send you when applying for a role.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ddottyler/bank_tech_test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ddottyler/bank_tech_test/issues"
+  },
+  "homepage": "https://github.com/ddottyler/bank_tech_test#readme",
+  "devDependencies": {
+    "eslint": "^7.21.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}

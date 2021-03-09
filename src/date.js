@@ -1,5 +1,4 @@
-class dateInfo{
-  
+class DateInfo {
   constructor() {
     this._today = new Date();
     this._dd = this._today.getDate();
@@ -8,7 +7,6 @@ class dateInfo{
   }
 
   dateToday() {
-    return `${this._dd}/${this._mm}/${this._yyyy}`
+    return `${this._dd}/${this._mm}/${this._yyyy}`;
   }
-
 }

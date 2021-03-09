@@ -22,3 +22,7 @@ This project has been designed to be interacted with via the JavaScript console.
 **How to run the tests** 
 
 This project is written in JavaScript and uses Jasmine as it's testing framework. Similarly to the above, to run and check the tests within this project, type `open SpecRunner.html` into the command line when in the root of the project repo.
+
+**How to run linter** 
+
+This project uses eslint as it's linter. To run this, use `eslint src/**` and `eslint spec/**`.

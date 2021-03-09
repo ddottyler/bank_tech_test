@@ -1,29 +1,26 @@
-describe("dateInfo", function(){
-
+describe('DateInfo', function() {
   let dateTest;
-  
-  beforeEach(function(){
-    dateTest = new dateInfo();
-  })
 
-// Helpers are below 
+  beforeEach(function() {
+    dateTest = new DateInfo();
+  });
+
+  // Helpers are below
 
   function date() {
-    let today = new Date();
-    let dd = today.getDate();
-    let mm = today.getMonth()+1;
-    let yyyy = today.getFullYear();
-    let dateInfo = `${dd}/${mm}/${yyyy}`;
-    return dateInfo
+    const today = new Date();
+    const dd = today.getDate();
+    const mm = today.getMonth()+1;
+    const yyyy = today.getFullYear();
+    const dateInfo = `${dd}/${mm}/${yyyy}`;
+    return dateInfo;
   }
 
   // Tests are below
 
-  describe('dateToday', function(){
-    it('gives the days date', function(){
+  describe('dateToday', function() {
+    it('gives the days date', function() {
       expect(dateTest.dateToday()).toEqual(date());
-    })
-    
-  })
-
-})
+    });
+  });
+});
