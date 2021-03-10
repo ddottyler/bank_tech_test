@@ -28,26 +28,26 @@ describe('BankAccount', function() {
   describe('deposit', function() {
     it('should deposit x amount to balance', function() {
       account.deposit(500);
-      expect(account._accountBalance.showBalance()).toBe(500);
+      expect(account._balance.showBalance()).toBe(500);
     });
 
     it('should prevent deposits of over the max limit being made', function() {
       expect(account.deposit(OVER_MAX)).toEqual('Max deposit reached');
     });
-  });
 
-  describe('depositTransaction', function() {
-    it('should make a full record of deposit', function() {
-      account.deposit(500);
-      expect(account._transactionHistory[0]).toEqual(
-          {date: date(), credit: 500.00, debit: '', balance: 500.00});
+    describe('depositTransaction', function() {
+      it('should make a full record of deposit', function() {
+        account.deposit(500);
+        expect(account._transactions._transactionHistory[0]).toEqual(
+            {date: date(), credit: 500.00, debit: '', balance: 500.00});
+      });
     });
   });
 
   describe('withdraw', function() {
     it('should withdraw x amount from balance', function() {
       depositAndWithdraw();
-      expect(account._accountBalance.showBalance()).toBe(0);
+      expect(account._balance.showBalance()).toBe(0);
     });
 
     it('should prevent withdrawal above the max withdrawal limit', function() {
@@ -57,13 +57,13 @@ describe('BankAccount', function() {
     it('should reject withdrawal if balance is too low', function() {
       expect(account.withdraw(10)).toEqual('Balance too low for withdrawal');
     });
-  });
 
-  describe('withdrawTransaction', function() {
-    it('should make a full record of withdrawal details', function() {
-      depositAndWithdraw();
-      expect(account._transactionHistory[1]).toEqual(
-          {date: date(), credit: '', debit: 500.00, balance: 0});
+    describe('withdrawTransaction', function() {
+      it('should make a full record of withdrawal details', function() {
+        depositAndWithdraw();
+        expect(account._transactions._transactionHistory[1]).toEqual(
+            {date: date(), credit: '', debit: 500.00, balance: 0});
+      });
     });
   });
 

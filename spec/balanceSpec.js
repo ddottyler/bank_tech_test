@@ -1,4 +1,4 @@
-describe('balance', function() {
+describe('Balance', function() {
   let balanceTest;
 
   beforeEach(function() {
