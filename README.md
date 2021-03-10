@@ -13,7 +13,7 @@ This tech test will aim to replicate personal banking functions with the followi
 - Be able to store data in memory (without requiring a database)
 
 **Project approach** 
-I first identified the core classes that would be needed and the variables/methods within each of those by domain modelling the challenge. As the project developed, it became clear that additional methods (especially around depositing and withdrawing) would be necessary to streamling each method and to ensure that SRP was being followed. I felt that having `balance` as a separate class made sense as it had it's own responsibilities but needed to be easily accessed and read using the main `bankAccount` class. 
+I first identified the core classes that would be needed and the variables/methods within each of those by domain modelling the challenge. As the project developed, it became clear that additional methods (especially around depositing and withdrawing) would be necessary to streamling each method and to ensure that SRP was being followed. I felt that having `balance` and `transaction` as separate classes made sense as it had they had their own responsibilities but needed to be easily accessed and read using the main `bankAccount` class. 
 
 **How to run the project** 
 

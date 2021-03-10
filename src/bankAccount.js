@@ -2,9 +2,7 @@ class BankAccount {
   constructor() {
     this._topOfStatement = 'date || credit || debit || balance\n';
     this._balance = new Balance;
-    // this._transactionHistory = [];
     this._transactions = new Transaction;
-    // this._currentDate = new DateInfo;
     this._MAX_DEPOSIT = 5000;
     this._MAX_WITHDRAWAL = 5000;
   }
